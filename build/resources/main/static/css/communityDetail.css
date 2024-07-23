@@ -1,0 +1,97 @@
+
+.main img {
+    border-radius: 50%;
+}
+
+.talk-wrapper {
+    width: 1200px;
+    margin: 30px auto 0;
+}
+
+/* community header */
+.talk-header-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.talk-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.talk-header div {
+    display: flex;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+/* community main */
+.talk-main {
+    margin-bottom: 80px;
+}
+
+.talk-main-title {
+    font-size: 35px;
+    font-weight: 600;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.talk-main-content {
+    font-size: 18px;
+    height: 200px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.talk-main-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.talk-btn {
+    height: 35px;
+    width: 50px;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-left: 10px;
+    background-color: var(--light-raise);
+
+    display: flex;
+        justify-content: center;
+        align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.talk-main-btn > div {
+    display: flex;
+}
+
+/* 추천 비추천 */
+.recommend > input:last-child {
+    background-color: var(--raise-btn);
+    border:2px solid var(--raise-btn);
+    margin: 0;
+}
+
+.opposite > input:last-child  {
+    background-color: white;
+    border:2px solid var(--raise-btn);
+    margin: 0;
+}

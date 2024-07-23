@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" th:href="@{/img/favicon.png}" type="image/x-icon" />
+        <link rel="stylesheet" th:href="@{/css/common.css}" />
+        <link rel="stylesheet" th:href="@{/css/togetherList.css}" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script defer th:src="@{/js/togetherList.js}"></script>
+        <title>함께하기</title>
+    </head>
+    <body>
+        <!--/* header */-->
+        <th:block th:insert="~{fragment/header::header}"></th:block>
+
+        <!--/* section */-->
+        <div id="togetherList-wrap">
+            <div id="txt-section">
+                <img id="img" src="/img/ribbon-green.png" height="190px">
+                <div id="txt-title">함께하기</div>
+                <form id="banner-section" name="typeFrm">
+                    <input type="hidden" id="type-val-input" name="type" />
+                    <div id="type-val" th:text="${type}"></div>
+
+                    <div class="type-outline">
+                        <div class="type">체험</div>
+                    </div>
+                    <div class="type-outline">
+                        <div class="type">축제</div>
+                    </div>
+                    <div class="type-outline">
+                        <div class="type">공연ㆍ예술</div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="list-section">
+                <div id="list-wrap">
+                    <input type="hidden" th:value="${logged}" id="logged" />
+
+                    <div class="list-content" th:each="together : ${togethers}">
+                        <a th:href="@{'/together/detail/' + ${type} + '/' + ${together.id}}">
+                            <div class="content-img" th:style="'background-image: url(' + ${together.MAIN_IMG} + ')'"></div>
+                            <div th:text="${type}" class="content-type"></div>
+                            <div class="content-title" th:text="${together.TITLE}"></div>
+                            <div class="content-period" th:text="${together.DATE}"></div>
+                        </a>
+                        <form class="content-zzimBtn" th:action="@{/together/listZzimToggle}" method="POST">
+                            <input type="hidden" th:value="${together.id}" name="togetherId" />
+                            <input type="hidden" th:value="${type}" name="type" />
+                            <input type="hidden" th:value="${page}" name="page" />
+                            <input type="hidden" th:value="${together.isZzimClicked}" class="isZzimClicked" />
+                            <svg
+                                t="1689815540548"
+                                class="icon"
+                                viewBox="0 0 1024 1024"
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                p-id="2271"
+                            >
+                                <path
+                                    d="M742.4 101.12A249.6 249.6 0 0 0 512 256a249.6 249.6 0 0 0-230.72-154.88C143.68 101.12 32 238.4 32 376.32c0 301.44 416 546.56 480 546.56s480-245.12 480-546.56c0-137.92-111.68-275.2-249.6-275.2z"
+                                    fill="#231F20"
+                                    p-id="2272"
+                                    class="heart"
+                                ></path>
+                            </svg>
+                        </form>
+                    </div>
+                </div>
+
+                <th:block th:insert="~{fragment/pagination::pagination}"></th:block>
+            </div>
+        </div>
+
+        <!--/* footer */-->
+        <th:block th:insert="~{fragment/footer::footer}"></th:block>
+    </body>
+</html>

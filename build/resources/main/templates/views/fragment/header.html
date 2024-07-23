@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <th:block th:fragment="header">
+        <head>
+            <link rel="stylesheet" th:href="@{/css/header.css}" />
+            <script defer th:src="@{/js/header.js}"></script>
+        </head>
+        <header>
+            <div class="header">
+                <ul class="headerBtnWrap">
+                    <a th:href="@{/home}"><img class="headerBtn" src="/img/logo.png" height="80px" /></a>
+                    <li class="menuWrap headerBtn">
+                        <div class="menuTitleWrap">
+                            <a th:href="@{/together/list}" class="menuText togetherBtn">함께하기</a>
+                            <a th:href="@{/protect/list}" class="menuText protectBtn">지켜주기</a>
+                            <a th:href="@{/post/list}" class="menuText raiseBtn">같이키우기</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="headerBtnWrap">
+                    <li>
+                        <a th:href="@{/product/list}"><img class="raiseToggle talkToggle" title="community" src="/img/toggleC.png" height="30px" /></a>
+                        <a th:href="@{/post/list}"><img class="raiseToggle marketToggle" title="market" src="/img/toggleM.png" height="30px" /></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/user/zzim}"><img class="rightHeaderBtn" src="/img/zzimBtn.png" height="35px" /></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/user/mypage}"><img class="rightHeaderBtn" src="/img/me.png" height="35px" /></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/user/logIn}"><img class="rightHeaderBtn" sec:authorize="isAnonymous()" src="/img/loginBtn.png" height="35px" /></a>
+                    </li>
+                    <li>
+                        <form th:action="@{/doLogout}" method="POST" sec:authorize="isAuthenticated()">
+                            <button type="submit" class="headerBtn logoutBtn"><img src="/img/logoutBtn.png" class="rightHeaderBtn" height="35px"></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </th:block>
+</html>

@@ -1,0 +1,410 @@
+
+/* ------------- home page1 ------------ */
+
+.home-page1 {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* header */
+.home-header {
+    width: 1200px;
+    height: 120px;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerBtnWrap {
+    display: flex;
+    list-style: none;
+}
+
+.headerBtn {
+    margin-left: 10px;
+}
+
+.logoutBtn {
+    border: none;
+    background-color: white;
+}
+
+/* main-logo */
+.logo-wrap {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 280px;
+}
+
+/* main-btn */
+.home-main {
+    margin: 0 auto;
+    width: 1200px;
+    height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 50px;
+}
+
+.home-main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    column-gap: 50px;
+}
+
+.main-menu-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.main-menu-wrap > a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 40px;
+    margin: 0 40px;
+    padding: 30px 40px;
+    border-radius: 100px;
+    background-color: var(--light-home-menu);
+    color: var(--home-menu-btn);
+    z-index: 100;
+}
+
+.main-menu-wrap > a:hover {
+    scale: calc(1.1); /* scale : 비율대로 커지기 */
+    cursor: pointer;
+}
+
+.main-menu-wrap > .main-detail {
+    margin: 10px 0;
+    position: absolute;
+    top: 80px;
+}
+
+/* main-menu 색 바꾸기 */
+.togetherColor {
+    animation: together 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes together {
+    from {
+        background-color: var(--light-cloud);
+        color: var(--cloud-color);
+    }
+    to {
+        color: var(--together-color);
+        background-color: var(--light-together);
+    }
+}
+.protectColor {
+    animation: protect 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes protect {
+    from {
+        background-color: var(--light-cloud);
+        color: var(--cloud-color);
+    }
+    to {
+        color: var(--protect-color);
+        background-color: var(--light-protect);
+    }
+}
+.raiseColor {
+    animation: raise 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes raise {
+    from {
+        background-color: var(--light-cloud);
+        color: var(--cloud-color);
+    }
+    to {
+        color: var(--raise-color);
+        background-color: var(--light-raise);
+    }
+}
+
+/* main-detail 움직이기 */
+.slideDetailUp {
+    animation: slideUp 0.1s ease-in;
+}
+
+@keyframes slideUp {
+    from {
+        top: 120px;
+    }
+    to {
+        top: 80px;
+    }
+}
+.slideDetailDown {
+    animation: slideDown 0.1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+    from {
+        top: 80px;
+    }
+    to {
+        top: 120px;
+    }
+}
+
+/* ------------- home page2 ------------ */
+.home-page2 {
+    background-color: pink;
+    height: 1200px;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page2-title {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 60px;
+    color: rgb(255, 83, 112);
+}
+
+.all-graph-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 제목 하나 */
+.graph-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px 20px;
+}
+
+.graph-wrap > .graph-title {
+    font-weight: 800;
+    font-size: 24px;
+    margin: 20px;
+}
+
+.graph-wrap > .graph-title > span:nth-child(2) {
+    color: red;
+}
+
+/* 내용 하나 */
+.graph-wrap > .graph {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.postTopWrap {
+    text-align: center;
+    display: flex;
+    column-gap: 2px;
+}
+
+.postTopWrap:nth-child(1) > li {
+    background-color: var(--light-gray);
+
+    &:nth-child(1) {
+        border-radius: 7px 0 0 0;
+    }
+    &:nth-child(4) {
+        border-radius: 0 7px 0 0;
+    }
+}
+
+.postTopWrap:nth-child(2) > li {
+    background-color: var(--protect-color);
+    font-weight: 600;
+    animation: colorChange 0.5s linear infinite alternate;
+}
+
+@keyframes colorChange {
+    from{
+        background-color: var(--protect-color);
+    }to{
+        background-color: pink;
+    }
+}
+
+.postTopWrap > li {
+    height: 45px;
+    line-height: 3;
+    padding: 0 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:nth-child(1){
+        width: 40px;
+    }
+    &:nth-child(2){
+        width: 260px;
+    }
+    &:nth-child(3){
+        width: 110px;
+    }
+    &:nth-child(4){
+        width: 60px;
+    }
+}
+
+.zzimTopWrap > li {
+    height: 45px;
+    line-height: 3;
+    padding: 0 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:nth-child(1){
+        width: 40px;
+    }
+    &:nth-child(2){
+        width: 100px;
+    }
+    &:nth-child(3){
+        width: 264px;
+    }
+    &:nth-child(4){
+        width: 60px;
+    }
+}
+
+.postTitle {
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+/* bar graph */
+.barGraph {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.graphText1, .graphText2 {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0 10px;
+    border-radius: 0 0 7px 7px;
+    font-size: 16px;
+}
+
+.graphText1 > div, .graphText2 > div {
+    margin: 0 20px;
+
+    &:nth-child(1) {
+        font-weight: 600;
+    }
+}
+
+.graphBar1, .graphBar2 {
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.graphBar1 > div, .graphBar2 > div {
+    background: pink;
+    width: 50px;
+    margin: 0 17px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    border-radius: 3px 3px 0 0;
+
+    &:nth-child(1) {
+        font-weight: 600;
+        background-color: var(--protect-color);
+    }
+}
+
+/* ---------- 변하는 바 그래프 ---------- */
+.change-wrap{
+    position: relative;
+    width: 520px;
+    height: 394.67px;
+}
+
+.change-wrap > .graph-wrap {
+    background: pink;
+    position: absolute;
+
+    &:nth-child(1) {
+        animation: opacity 7s infinite alternate;
+        animation-timing-function : cubic-bezier(1,0,0,1);
+        z-index: 2;
+    }
+
+    &:nth-child(2) {
+        z-index: 1;
+    }
+}
+
+@keyframes opacity {
+    from{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* media screen */
+
+@media screen and (max-height: 700px) {
+    .logo {
+        height: 210px;
+    }
+
+    .home-main {
+        row-gap: 0;
+    }
+
+    .home-main-menu {
+        column-gap: 0;
+    }
+}

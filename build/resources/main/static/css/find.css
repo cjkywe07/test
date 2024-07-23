@@ -1,0 +1,194 @@
+
+.all-wrapper {
+    height: 100vh;
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* 찾기 큰 네모 */
+.find-inform-wrap {
+    width: 500px;
+    height: 405px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* 아이디찾기 네모 */
+.find-wrap {
+    width: 400px;
+    display: table;
+
+    &:first-of-type {
+        margin-bottom: 50px;
+    }
+}
+
+.find-title {
+    background-color: white;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 5px 5px 0 0;
+}
+
+/* ~ 로 찾기 네모 */
+.find-content-wrap {
+    background-color: var(--light-cloud);
+    border-top: none;
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+}
+
+.find-content-title {
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.menu-close {
+    display: none;
+}
+
+/* 누르면 보는 메뉴 */
+.find-content-hidden {
+    display: none;
+}
+
+.find-input-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.find-input-wrap > input {
+    height: 45px;
+    padding-left: 13px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    margin-top: 15px;
+    outline: none;
+    font-size: 15px;
+}
+
+.find-input-wrap > input:focus {
+    border: 2px solid var(--find-input-focus);
+}
+
+
+.find-input-wrap > .find-btn {
+    background-color: var(--cloud-color);
+    color: white;
+    border-radius: 3px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: var(--cloud-hover);
+        cursor: pointer;
+    }
+}
+
+/* 아이디 알려주기 */
+.giveIdWrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.give-title {
+    font-weight: 600;
+    font-size: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.give-title > span {
+    color: salmon;
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* 비번 변경 */
+.giveIdWrap a {
+    font-size: 14px;
+    color: gray;
+    &:hover {
+        text-decoration : underline;
+    }
+}
+
+.changePw {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.change-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.change-pw-content {
+    width: 100%;
+}
+
+.change-pw-wrap input {
+    width: 400px;
+    height: 50px;
+    padding-left: 13px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    &::focus {
+        border: none;
+    }
+}
+
+.change-pw-wrap .change-pw-complete {
+    border: none;
+    background-color: var(--cloud-color);
+    color: white;
+
+    &:hover {
+        background-color: var(--cloud-hover);
+        cursor: pointer;
+    }
+}
